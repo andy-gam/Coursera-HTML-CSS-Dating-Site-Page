@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dating Website</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+
+		/* Стили для блока fieldset где мы задаем светложелтый фон, желтую обводку шириной 10px, нижний отступ и ширину*/
+		fieldset {
+			background: lightyellow;
+			border: 10px solid yellow;
+			margin-bottom: 10px;
+			width: 720px;
+		}
+
+
+		/*Стили для всех элементов label*/
+		label {
+			width: 180px;
+			display: inline-block;
+			text-align: right;
+			vertical-align: top;
+		}
+
+		/*Стили для всех элементов label, внутри которого есть тег input где type="radio" или type="checkbox"*/
+
+		#method, #gender {
+			width:auto;
+		}
+
+
+
+		/* Стили для имен индикаторов: Short, Tall, Poor, Rich*/
+		.indicators span {
+			text-align: center;
+			display: inline-block;
+			padding: 5px;
+			color: #fff;
+			font-weight: 600;
+		}
+
+
+
+		/* Персональные стили для имен индикаторов которые поясняют минимальное значение: Short, Poor*/
+		.indicators span.indicators-min {
+			background: #9A1A2C;
+		}
+
+
+
+		/* Персональные стили для имен индикаторов которые поясняют минимальное значение: Tall, Rich*/
+		.indicators span.indicators-max {
+			background: #710073;
+		}
+
+		textarea {
+			width: 360px;
+			height: 50px;
+		}
+
+		/*Стиль который отвечает за увеличение текста при наведение мышки, это происходит благодаря псевдоклассу hover*/
+		label:hover {
+			font-size:28px
+		}
+
+		input:hover {
+			font-size:20px
+		}
+
+	</style>
+
+
+</head>
+<body>
+
+
+<h1>Please Enter Your Details For Our Dating Website!</h1>
+
+
+<form method="post" enctype="multipart/form-data" action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php">
+
+
+  <fieldset>
+
+    <legend>Your Face</legend>
+    <p><label for="avatar">Your Image: </label><input type="file" id="avatar" name="avatar"></p>
+    <p><label for="preview">Image preview: </label><img id="preview" src=""></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Your General Details</legend>
+    <p><label for="name">Name: </label><input name="name" type="text" required></p>
+    <p><label for="gender">Gender: </label>
+    <label for="male" id="gender"><input type="radio" id="male" name="gender" required /> Male</label> <label for="female" id="gender"><input type="radio" name="gender" id="female" required /> Female</label></p>
+    <p><label for="age">Age: </label><input type="number" name="age" required></p>
+    <p><label for="date">Date of birth: </label><input type="date" min="1920-01-01" max="2017-01-01" name="date"></p>
+    <p><label for="color">Favorite color: </label><input type="color" name="color"></p>
+
+
+    <p><label for="country">Which country:</label>
+    		<select name = "country" required>
+				<option selected="selected"></option>
+    			<option value="China">China</option>
+    			<option value="USA">USA</option>
+    			<option value="Japan">Japan</option>
+    			<option value="Russia">Russia</option>
+    			<option value="Russia">Ukraine</option>
+    		</select>
+    </p>	
+  </fieldset>
+
+   <fieldset class="indicators">
+    <legend>Your Indicators</legend>
+
+    <p><label for="height">Height:</label><span class="indicators-min">Short</span><input type="range" min="0" max="100" name="height"><span class="indicators-max">Tall</span></p>
+
+    <p><label for="salary">Salary: </label><span class="indicators-min">Poor</span><input type="range" min="0" max="100" name="salary"><span class="indicators-max">Rich</span></p>
+  </fieldset>
+
+  <fieldset>
+    <legend>Your Contact Information</legend>
+    <p><label for=>Email: </label><input type="email" name="email" required ></p>
+    <p><label for=>Mobile: </label><input type="tel" name="mobile" required></p>
+    <p><label for=>Address: </label><textarea name="address" required></textarea>
+    <p><label for=>Method to contact you: </label><label for="method-email" id="method"><input type="checkbox" name="email">Email</label><label for="method-whatsapp" id="method"><input type="checkbox" name="whatsapp">Whatsapp</label><label for="method-inappchat" id="method"><input type="checkbox" name="inappchat">In-app chat</label></p>
+  </fieldset>
+
+  <p><input name="submit" type="submit"></p>
+</form>
+
+
+<script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+
+
+</body>
+</html>
